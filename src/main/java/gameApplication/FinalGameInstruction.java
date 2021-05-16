@@ -1,4 +1,6 @@
-public class GameInstruction {
+package gameApplication;
+
+public class FinalGameInstruction {
 
    void tictactoeInstruction(){
       System.out.println("Tic Tac Toe instruction");

@@ -1,4 +1,6 @@
-public class GameScore {
+package gameApplication;
+
+public class FinalGameScore {
 
     void allScore(){}
 

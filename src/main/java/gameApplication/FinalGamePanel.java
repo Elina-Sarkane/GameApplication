@@ -8,6 +8,10 @@ public class FinalGamePanel extends JPanel implements Runnable{
 
     }
 
+    private enum GAMEMENU{
+
+    }
+
 
 
     @Override

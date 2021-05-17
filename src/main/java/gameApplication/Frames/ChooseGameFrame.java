@@ -1,8 +1,4 @@
 package gameApplication.Frames;
-
-import pacmanGame.PacManMain;
-import pongGame.PongGameFrame;
-import snakeGame.SnakeGameFrame;
 import tictactoeGame.TicTacToe;
 
 import javax.swing.*;
@@ -12,6 +8,7 @@ import java.awt.event.ActionListener;
 
 public class ChooseGameFrame extends JFrame implements ActionListener{
 
+    JFrame chooseGameFrame;
    JButton tictactoeButton;
    JButton pongButton;
    JButton snakeButton;
@@ -75,61 +72,44 @@ public class ChooseGameFrame extends JFrame implements ActionListener{
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        this.setTitle("Choose games!");
+        chooseGameFrame = new JFrame();
+        chooseGameFrame.setTitle("Choose games!");
         ImageIcon chooseGameImage = new ImageIcon("menuImage.png");
-        this.setIconImage(chooseGameImage.getImage());
-        this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(151, 186, 213));
-        this.setLayout(null);
-        this.setSize(450, 550);
-        this.setVisible(true);
-        this.add(tictactoeButton);
-        this.add(pongButton);
-        this.add(snakeButton);
-        this.add(pacmanButton);
-        this.add(backButton);
-        this.add(exitButton);
+        chooseGameFrame.setIconImage(chooseGameImage.getImage());
+        chooseGameFrame.setResizable(false);
+        chooseGameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        chooseGameFrame.getContentPane().setBackground(new Color(151, 186, 213));
+        chooseGameFrame.setLayout(null);
+        chooseGameFrame.setSize(450, 550);
+        chooseGameFrame.setVisible(true);
+        chooseGameFrame.add(tictactoeButton);
+        chooseGameFrame.add(pongButton);
+        chooseGameFrame.add(snakeButton);
+        chooseGameFrame.add(pacmanButton);
+        chooseGameFrame.add(backButton);
+        chooseGameFrame.add(exitButton);
     }
 
    @Override
     public void actionPerformed(ActionEvent e) {
        if (e.getSource() == tictactoeButton) {
-           // chooseGameFrame.dispose();
-           TicTacToe tictactoe = new TicTacToe();
+           chooseGameFrame.dispose();
+           TictactoeGameFrame tictactoeGameFrame = new TictactoeGameFrame();
        } else if (e.getSource() == pongButton) {
+           chooseGameFrame.dispose();
            PongGameFrame pongGameFrame = new PongGameFrame();
        } else if (e.getSource() == snakeButton) {
+           chooseGameFrame.dispose();
            SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
        } else if (e.getSource() == pacmanButton) {
-           PacManMain pacmanMain = new PacManMain();
-           pacmanMain.setVisible(true);
-           pacmanMain.setTitle("Pacman");
-           pacmanMain.setSize(380, 420);
-           pacmanMain.setDefaultCloseOperation(EXIT_ON_CLOSE);
-           pacmanMain.setLocationRelativeTo(null);
+           chooseGameFrame.dispose();
+           PacmanGameFrame pacmanGameFrame = new PacmanGameFrame();
        }else if(e.getSource() == backButton){
-
+           chooseGameFrame.dispose();
+           GameMenuFrame gameMenuFrame = new GameMenuFrame();
        }else {
            System.exit(0);
        }
     }
-
 }
-//this.add(chooseGameLabel);
-//this.setTitle("Choose Game!");
-
-//this.setResizable(false);
-
-       /* new JLabel();
-        chooseGameLabel.setVisible(true);
-        chooseGameLabel.setText("CHOOSE GAME!");
-        chooseGameLabel.setHorizontalAlignment(JLabel.CENTER);
-        chooseGameLabel.setVerticalAlignment(JLabel.TOP);
-        chooseGameLabel.setForeground(new Color(0, 0, 0));
-        chooseGameLabel.setFont(new Font("Colibry", Font.BOLD, 25));
-
-        ImageIcon chooseGameImage = new ImageIcon("menuImage.png");
-        chooseGameFrame.setIconImage(chooseGameImage.getImage());
-        chooseGameFrame.getContentPane().setBackground(new Color(51, 153, 255));*/
 

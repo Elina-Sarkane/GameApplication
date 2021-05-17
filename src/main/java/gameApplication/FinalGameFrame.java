@@ -12,14 +12,22 @@ import java.awt.event.ActionListener;
 
 
 public class FinalGameFrame extends JFrame implements ActionListener {
-    FinalGamePanel finalGamePanel;
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+}
+
+    /* FinalGamePanel finalGamePanel;
     JButton loginButton;
     JFrame menuFrame;
     JButton chooseGameButton;
     JButton scoreButton;
     JButton exitButton;
-
-    public FinalGameFrame() {
+    */
+    /*public FinalGameFrame() {
         finalGamePanel = new FinalGamePanel();
 
         JLabel menuLabel = new JLabel();
@@ -31,7 +39,7 @@ public class FinalGameFrame extends JFrame implements ActionListener {
         menuLabel.setForeground(new Color(0, 0, 0));
         menuLabel.setFont(new Font("Colibry", Font.BOLD,25));
 
-//login buttom
+//login button
         loginButton = new JButton();
         loginButton.setBounds(200, 90, 100, 50);
         loginButton.addActionListener(this);
@@ -52,7 +60,7 @@ public class FinalGameFrame extends JFrame implements ActionListener {
         scoreButton = new JButton();
         scoreButton.setBounds(200, 90, 100, 50);
         scoreButton.addActionListener(this);
-        scoreButton.setText("Log In");
+        scoreButton.setText("Scores");
         scoreButton.setFocusable(false);
         scoreButton.setBackground(new Color(255, 204, 0));
 
@@ -60,7 +68,7 @@ public class FinalGameFrame extends JFrame implements ActionListener {
         exitButton = new JButton();
         exitButton.setBounds(200, 90, 100, 50);
         exitButton.addActionListener(this);
-        exitButton.setText("Log In");
+        exitButton.setText("Exit");
         exitButton.setFocusable(false);
         exitButton.setBackground(new Color(255, 204, 0));
 
@@ -99,28 +107,4 @@ public class FinalGameFrame extends JFrame implements ActionListener {
 
         }
     }
-}
-    /*public PopupMenu gameMenuButton(){
-        JButton loginButton;
-        JButton chooseGameButton;
-        JButton scoreButton;
-
-
-        loginButton = new JButton();
-        loginButton.setBounds(200, 90, 100, 50);
-        loginButton.addActionListener(e -> logInFrame());
-        loginButton.setText("Log In");
-        loginButton.setFocusable(false);
-        loginButton.setBackground(new Color(255, 204, 0));
-        //loginButton.setLayout(null);
-
-        chooseGameButton = new JButton();
-        chooseGameButton.setBounds(200, 90, 100, 50);
-        chooseGameButton.addActionListener(e -> chooseGameFrame());
-        chooseGameButton.setText("Choose Game");
-        chooseGameButton.setFocusable(false);
-        chooseGameButton.setBackground(new Color(255, 204, 0));
-        //chooseGameButton.setLayout(null);
-
-        return null;
-    }*/
+}*/

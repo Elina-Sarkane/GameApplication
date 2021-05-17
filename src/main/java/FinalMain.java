@@ -1,8 +1,10 @@
 import gameApplication.FinalGameFrame;
+import gameApplication.Frames.ChooseGameFrame;
 
 public class FinalMain {
     public static void main(String[] args) {
 
-        FinalGameFrame finalGameFrame = new FinalGameFrame();
+        ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
+        //FinalGameFrame finalGameFrame = new FinalGameFrame();
     }
 }

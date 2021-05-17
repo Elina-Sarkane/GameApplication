@@ -7,7 +7,7 @@ public class PongGameFrame extends JFrame {
 
     PongGamePanel pongGamePanel;
 
-    PongGameFrame (){
+    public PongGameFrame(){
         pongGamePanel = new PongGamePanel();
         this.add(pongGamePanel);
         this.setTitle("Ping Pong Game");

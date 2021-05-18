@@ -10,12 +10,12 @@ public class PacManMain extends JFrame {
 
 
     public static void main(String[] args) {
-        PacManMain pac = new PacManMain();
-        pac.setVisible(true);
-        pac.setTitle("Pacman");
-        pac.setSize(380,420);
-        pac.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        pac.setLocationRelativeTo(null);
+        PacManMain pacmanMain = new PacManMain();
+        pacmanMain.setVisible(true);
+        pacmanMain.setTitle("Pacman");
+        pacmanMain.setSize(380,420);
+        pacmanMain.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pacmanMain.setLocationRelativeTo(null);
 
     }
 

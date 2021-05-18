@@ -1,6 +1,68 @@
 package gameApplication;
 
-public class FinalGameInstruction {
+import gameApplication.Frames.InstructionGameFrame;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class FinalGameInstruction extends JFrame implements ActionListener {
+
+   JFrame instructionFrame;
+   JPanel instructionPanel;
+   JButton backButton;
+   JButton exitButton;
+
+   public FinalGameInstruction() {
+
+      backButton = new JButton();
+      backButton.setBounds(100, 350, 250, 50);
+      backButton.addActionListener(this);
+      backButton.setText("GO BACK");
+      backButton.setFocusable(false);
+      backButton.setFont(new Font("Calibri", Font.BOLD,20));
+      backButton.setBackground(new Color(225, 220, 96));
+      backButton.setBorder(BorderFactory.createBevelBorder(0));
+
+      exitButton = new JButton();
+      exitButton.setBounds(100, 430, 250, 50);
+      exitButton.addActionListener(this);
+      exitButton.setText("EXIT");
+      exitButton.setFocusable(false);
+      exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+      exitButton.setBackground(new Color(225, 220, 96));
+      exitButton.setBorder(BorderFactory.createBevelBorder(0));
+
+      instructionPanel = new JPanel();
+
+
+      instructionFrame = new JFrame();
+      instructionFrame.setTitle("Tic-Tac-Toe game instruction!");
+      ImageIcon chooseGameImage = new ImageIcon("menuImage.png");
+      instructionFrame.setIconImage(chooseGameImage.getImage());
+      instructionFrame.setResizable(false);
+      instructionFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      instructionFrame.getContentPane().setBackground(new Color(151, 186, 213));
+      instructionFrame.setLayout(null);
+      instructionFrame.setSize(450, 550);
+      instructionFrame.setVisible(true);
+      instructionFrame.add(backButton);
+      instructionFrame.add(exitButton);
+
+   }
+   @Override
+   public void actionPerformed(ActionEvent e) {
+      if(e.getSource() == backButton){
+         instructionFrame.dispose();
+         InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
+      }else {
+         System.exit(0);
+      }
+   }
+
+
+
 
    void tictactoeInstruction(){
       System.out.println("Tic Tac Toe instruction");
@@ -33,4 +95,6 @@ public class FinalGameInstruction {
               "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts in the bottom of the board." +
               "You'll be offered to start a new game right after you loose all your lives.");
    }
+
+
 }

@@ -92,7 +92,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
             ScoresFrame scoresFrame = new ScoresFrame();
         }else if (e.getSource() == instructionButton){
             gameMenuFrame.dispose();
-            FinalGameInstruction finalGameInstruction = new FinalGameInstruction();
+            InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
         }else {
             System.exit(0);
         }

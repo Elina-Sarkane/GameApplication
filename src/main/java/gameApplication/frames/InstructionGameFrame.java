@@ -1,6 +1,4 @@
-package gameApplication.Frames;
-
-import gameApplication.FinalGameInstruction;
+package gameApplication.frames;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +22,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         tictactoeButton.addActionListener(this);
         tictactoeButton.setText("TIC-TAC-TOE GAME");
         tictactoeButton.setFocusable(false);
-        tictactoeButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        tictactoeButton.setFont(new Font("Calibre", Font.BOLD, 20));
         tictactoeButton.setBackground(new Color(225, 220, 96));
         tictactoeButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -33,7 +31,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         pongButton.addActionListener(this);
         pongButton.setText("PONG GAME");
         pongButton.setFocusable(false);
-        pongButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        pongButton.setFont(new Font("Calibre", Font.BOLD, 20));
         pongButton.setBackground(new Color(225, 220, 96));
         pongButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -42,7 +40,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         snakeButton.addActionListener(this);
         snakeButton.setText("SNAKE GAME");
         snakeButton.setFocusable(false);
-        snakeButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        snakeButton.setFont(new Font("Calibre", Font.BOLD, 20));
         snakeButton.setBackground(new Color(225, 220, 96));
         snakeButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -51,7 +49,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         pacmanButton.addActionListener(this);
         pacmanButton.setText("PAC-MAN GAME");
         pacmanButton.setFocusable(false);
-        pacmanButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        pacmanButton.setFont(new Font("Calibre", Font.BOLD, 20));
         pacmanButton.setBackground(new Color(225, 220, 96));
         pacmanButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -60,7 +58,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        backButton.setFont(new Font("Calibre", Font.BOLD, 20));
         backButton.setBackground(new Color(225, 220, 96));
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -69,7 +67,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD, 20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD, 20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -91,20 +89,78 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         instructionGameFrame.add(exitButton);
     }
 
+    void tictactoeInstruction() {
+        ImageIcon tictactoe = new ImageIcon("tictactoeImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "The game is played on a 3x3 grid.\n" +
+                        "Player one is X, and player two is O.\n" +
+                        "The first who gets 3 of his marks in a row (up, down, diagonally) is the winner.\n" +
+                        "When all squares are full, game is over.",
+                "Tic-Tac-Toe Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                tictactoe
+        );
+    }
+    void pongInstruction() {
+        ImageIcon pong = new ImageIcon("pongImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "The game principles is similar as in real life ping pong game.\n" +
+                        "Player 1 is BLUE, on the left side, move paddle by pressing W (goes up) and S (goes down) on your keyboard.\n" +
+                        "Player 2 ir RED, on the right side, move paddle by pressing UP and DOWN keys on your keyboard.\n" +
+                        "Every player gets a point if it doesn't miss the ball",
+                "Pong Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                pong
+        );
+    }
+    void snakeInstruction() {
+        ImageIcon snake = new ImageIcon("snakeImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "In this game the player controls a snake.\n" +
+                        "The objective is to eat as many apples as possible. Each time the snake eats an apple its body grows.\n" +
+                        "The snake must avoid all walls and its own body.\n" +
+                        "You can control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
+                        "If the game is finished, the GAME OVER message is displayed in the middle of the board.",
+                "Snake Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                snake
+        );
+    }
+    void pacmanInstruction() {
+        ImageIcon pacman = new ImageIcon("pacmanImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "Guide Pacman around the maze and eat all the little dots whilst avoiding ghosts.\n" +
+                        "You can start the game by pressing SPACE on your keyboard and control Pacman with cursor keys.\n" +
+                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts in the bottom of the board).\n" +
+                        "You'll be offered to start a new game right after you loose all your lives.",
+                "Pac-Man Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                pacman
+        );
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == tictactoeButton) {
             instructionGameFrame.dispose();
-            FinalGameInstruction finalGameInstruction = new FinalGameInstruction();
+            tictactoeInstruction();
+            InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
         } else if (e.getSource() == pongButton) {
             instructionGameFrame.dispose();
-            //pong instruction
+            pongInstruction();
+            InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
         } else if (e.getSource() == snakeButton) {
             instructionGameFrame.dispose();
-            //snake instruction
+            snakeInstruction();
+            InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
         } else if (e.getSource() == pacmanButton) {
             instructionGameFrame.dispose();
-            //pacman instruction
+            pacmanInstruction();
+            InstructionGameFrame instructionGameFrame = new InstructionGameFrame();
         } else if (e.getSource() == backButton) {
             instructionGameFrame.dispose();
             GameMenuFrame gameMenuFrame = new GameMenuFrame();

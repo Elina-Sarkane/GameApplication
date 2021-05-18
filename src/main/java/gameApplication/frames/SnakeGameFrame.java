@@ -1,26 +1,27 @@
-package gameApplication.Frames;
+package gameApplication.frames;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PongGameFrame extends JFrame implements ActionListener {
+public class SnakeGameFrame extends JFrame implements ActionListener {
 
-    JFrame pongFrame;
+    JFrame snakeFrame;
     JButton newGameButton;
     JButton continueGameButton;
     JButton backButton;
     JButton exitButton;
 
 
-    public PongGameFrame() {
+    public SnakeGameFrame() {
 
         newGameButton = new JButton();
         newGameButton.setBounds(100, 30, 250, 50);
         newGameButton.addActionListener(this);
         newGameButton.setText("NEW GAME");
         newGameButton.setFocusable(false);
-        newGameButton.setFont(new Font("Calibri", Font.BOLD,20));
+        newGameButton.setFont(new Font("Calibre", Font.BOLD,20));
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -29,7 +30,7 @@ public class PongGameFrame extends JFrame implements ActionListener {
         continueGameButton.addActionListener(this);
         continueGameButton.setText("CONTINUE GAME");
         continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibri", Font.BOLD,20));
+        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
         continueGameButton.setBackground(new Color(225, 220, 96));
         continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -38,7 +39,7 @@ public class PongGameFrame extends JFrame implements ActionListener {
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Calibri", Font.BOLD,20));
+        backButton.setFont(new Font("Calibre", Font.BOLD,20));
         backButton.setBackground(new Color(225, 220, 96));
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -47,39 +48,40 @@ public class PongGameFrame extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD,20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        pongFrame = new JFrame();
-        pongFrame.setTitle("Pong game!");
+        snakeFrame = new JFrame();
+        snakeFrame.setTitle("Snake game!");
         ImageIcon chooseGameImage = new ImageIcon("menuImage.png");
-        pongFrame.setIconImage(chooseGameImage.getImage());
-        pongFrame.setResizable(false);
-        pongFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pongFrame.getContentPane().setBackground(new Color(151, 186, 213));
-        pongFrame.setLayout(null);
-        pongFrame.setSize(450, 550);
-        pongFrame.setVisible(true);
-        pongFrame.add(newGameButton);
-        pongFrame.add(continueGameButton);
-        pongFrame.add(backButton);
-        pongFrame.add(exitButton);
+        snakeFrame.setIconImage(chooseGameImage.getImage());
+        snakeFrame.setResizable(false);
+        snakeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        snakeFrame.getContentPane().setBackground(new Color(151, 186, 213));
+        snakeFrame.setLayout(null);
+        snakeFrame.setSize(450, 550);
+        snakeFrame.setVisible(true);
+        snakeFrame.add(newGameButton);
+        snakeFrame.add(continueGameButton);
+        snakeFrame.add(backButton);
+        snakeFrame.add(exitButton);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == newGameButton) {
-            pongFrame.dispose();
-            pongGame.PongGameFrame pongGameFrame = new pongGame.PongGameFrame();
+            snakeFrame.dispose();
+            snakeGame.SnakeGameFrame snakeGameFrame = new snakeGame.SnakeGameFrame();
         } else if (e.getSource() == continueGameButton) {
-            pongFrame.dispose();
+            snakeFrame.dispose();
             //continue game
         }else if(e.getSource() == backButton){
-            pongFrame.dispose();
+            snakeFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
         }else {
             System.exit(0);
         }
     }
+
 }

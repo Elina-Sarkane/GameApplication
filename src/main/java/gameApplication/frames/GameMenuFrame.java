@@ -1,5 +1,4 @@
-package gameApplication.Frames;
-import gameApplication.FinalGameInstruction;
+package gameApplication.frames;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +21,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
         logInButton.addActionListener(this);
         logInButton.setText("LOG IN");
         logInButton.setFocusable(false);
-        logInButton.setFont(new Font("Calibri", Font.BOLD,20));
+        logInButton.setFont(new Font("Calibre", Font.BOLD,20));
         logInButton.setBackground(new Color(225, 220, 96));
         logInButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -31,7 +30,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
         chooseGameButton.addActionListener(this);
         chooseGameButton.setText("CHOOSE GAME");
         chooseGameButton.setFocusable(false);
-        chooseGameButton.setFont(new Font("Calibri", Font.BOLD,20));
+        chooseGameButton.setFont(new Font("Calibre", Font.BOLD,20));
         chooseGameButton.setBackground(new Color(225, 220, 96));
         chooseGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -40,7 +39,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
         scoresButton.addActionListener(this);
         scoresButton.setText("SCORES");
         scoresButton.setFocusable(false);
-        scoresButton.setFont(new Font("Calibri", Font.BOLD,20));
+        scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));
         scoresButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -49,7 +48,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
         instructionButton.addActionListener(this);
         instructionButton.setText("INSTRUCTIONS");
         instructionButton.setFocusable(false);
-        instructionButton.setFont(new Font("Calibri", Font.BOLD,20));
+        instructionButton.setFont(new Font("Calibre", Font.BOLD,20));
         instructionButton.setBackground(new Color(225, 220, 96));
         instructionButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -58,7 +57,7 @@ public class GameMenuFrame extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD,20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 

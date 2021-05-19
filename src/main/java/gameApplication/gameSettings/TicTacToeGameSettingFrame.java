@@ -1,5 +1,6 @@
 package gameApplication.gameSettings;
 import gameApplication.frames.TictactoeGameFrame;
+import score.TictactoeScore;
 import tictactoeGame.TicTacToe;
 
 import javax.swing.*;
@@ -76,7 +77,7 @@ public class TicTacToeGameSettingFrame extends JFrame implements ActionListener 
             TicTacToe ticTacToe = new TicTacToe();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            //TictactoeScore tictactoeScore = new TictactoeScore();
+            TictactoeScore tictactoeScore = new TictactoeScore();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             TictactoeGameFrame tictactoeGameFrame = new TictactoeGameFrame();

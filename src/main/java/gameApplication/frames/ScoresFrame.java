@@ -1,5 +1,10 @@
 package gameApplication.frames;
 
+import score.PacmanScore;
+import score.PongScore;
+import score.SnakeScore;
+import score.TictactoeScore;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -106,16 +111,16 @@ public class ScoresFrame extends JFrame implements ActionListener {
                 //allscores
             }else if(e.getSource() == tictactoeScoreButton){
                 scoresFrame.dispose();
-                //tictactoe scores
+                TictactoeScore tictactoeScore = new TictactoeScore();
             }else if(e.getSource() == pongScoreButton) {
                 scoresFrame.dispose();
-                //pong scores
+                PongScore pongScore = new PongScore();
             }else if(e.getSource() == snakeScoreButton) {
                 scoresFrame.dispose();
-                //snake scores
+                SnakeScore snakeScore = new SnakeScore();
             }else if(e.getSource() == pacmanScoreButton) {
                 scoresFrame.dispose();
-                //pac man scores
+                PacmanScore pacmanScore = new PacmanScore();
             }else if (e.getSource() == backButton){
                 scoresFrame.dispose();
                 GameMenuFrame gameMenuFrame = new GameMenuFrame();

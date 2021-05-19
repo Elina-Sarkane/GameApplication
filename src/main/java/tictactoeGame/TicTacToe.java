@@ -693,7 +693,7 @@ public class TicTacToe implements ActionListener {
         ImageIcon trophy = new ImageIcon("trophy.png");
         JOptionPane.showMessageDialog(
                 null,
-                "Y is the winner!",
+                "O is the winner!",
                 "Results!",
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy

@@ -436,13 +436,10 @@ public class PacManPanel extends JPanel implements ActionListener {
                 if (key == KeyEvent.VK_SPACE) {
                     inGame = true;
                     initGame();
-                    PacmanGameSettingFrame pacmanGameSettingFrame = new PacmanGameSettingFrame();
-
                 }
             }
         }
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

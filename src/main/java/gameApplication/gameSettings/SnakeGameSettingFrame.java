@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 public class SnakeGameSettingFrame extends JFrame implements ActionListener {
 
     JFrame gameSettingFrame;
-    JButton continueButton;
     JButton newGameButton;
     JButton scoresButton;
     JButton backButton;
@@ -21,17 +20,8 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
 
     public SnakeGameSettingFrame(){
 
-        continueButton = new JButton();
-        continueButton.setBounds(100, 30, 250, 50);
-        continueButton.addActionListener(this);
-        continueButton.setText("CONTINUE");
-        continueButton.setFocusable(false);
-        continueButton.setFont(new Font("Calibre", Font.BOLD,20));
-        continueButton.setBackground(new Color(225, 220, 96));
-        continueButton.setBorder(BorderFactory.createBevelBorder(0));
-
         newGameButton = new JButton();
-        newGameButton.setBounds(100, 110, 250, 50);
+        newGameButton.setBounds(100, 30, 250, 50);
         newGameButton.addActionListener(this);
         newGameButton.setText("NEW GAME");
         newGameButton.setFocusable(false);
@@ -40,7 +30,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
         scoresButton = new JButton();
-        scoresButton.setBounds(100, 190, 250, 50);
+        scoresButton.setBounds(100, 110, 250, 50);
         scoresButton.addActionListener(this);
         scoresButton.setText("SAVE SCORE");
         scoresButton.setFocusable(false);
@@ -49,7 +39,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         scoresButton.setBorder(BorderFactory.createBevelBorder(0));
 
         backButton = new JButton();
-        backButton.setBounds(100, 270, 250, 50);
+        backButton.setBounds(100, 190, 250, 50);
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
@@ -58,7 +48,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
         exitButton = new JButton();
-        exitButton.setBounds(100, 350, 250, 50);
+        exitButton.setBounds(100, 270, 250, 50);
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
@@ -76,7 +66,6 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         gameSettingFrame.setLayout(null);
         gameSettingFrame.setSize(450, 550);
         gameSettingFrame.setVisible(true);
-        gameSettingFrame.add(continueButton);
         gameSettingFrame.add(newGameButton);
         gameSettingFrame.add(scoresButton);
         gameSettingFrame.add(backButton);
@@ -85,15 +74,13 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == continueButton){
-            gameSettingFrame.dispose();
-            //continue pong game = pause
-        }else if(e.getSource() == newGameButton){
+        if(e.getSource() == newGameButton){
             gameSettingFrame.dispose();
             SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            //SnakeScore snakeScore = new SnakeScore();
+            SnakeScore snakeScore = new SnakeScore();
+            SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             gameApplication.frames.SnakeGameFrame snakeGameFrame = new gameApplication.frames.SnakeGameFrame();

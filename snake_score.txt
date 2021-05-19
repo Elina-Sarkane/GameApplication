@@ -1,1 +1,1 @@
-Snake Game score: 14
+Snake Game score: 0

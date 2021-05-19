@@ -77,8 +77,16 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         }
         else {
             gameOver(g);
-
-           // SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
+            ImageIcon trophy = new ImageIcon("trophy.png");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Game over!",
+                    "Results!",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    trophy
+            );
+            //dispose()
+            SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
         }
     }
     public void newApple() {
@@ -152,6 +160,8 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Calibre", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+    }
+    public void saveFinalScore(){
 
     }
     @Override

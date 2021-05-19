@@ -10,7 +10,7 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
 
     JFrame pacmanFrame;
     JButton newGameButton;
-    JButton continueGameButton;
+    JButton instructionButton;
     JButton backButton;
     JButton exitButton;
 
@@ -26,14 +26,14 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        continueGameButton = new JButton();
-        continueGameButton.setBounds(100, 110, 250, 50);
-        continueGameButton.addActionListener(this);
-        continueGameButton.setText("CONTINUE GAME");
-        continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
-        continueGameButton.setBackground(new Color(225, 220, 96));
-        continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
+        instructionButton = new JButton();
+        instructionButton.setBounds(100, 110, 250, 50);
+        instructionButton.addActionListener(this);
+        instructionButton.setText("INSTRUCTION");
+        instructionButton.setFocusable(false);
+        instructionButton.setFont(new Font("Calibre", Font.BOLD,20));
+        instructionButton.setBackground(new Color(225, 220, 96));
+        instructionButton.setBorder(BorderFactory.createBevelBorder(0));
 
         backButton = new JButton();
         backButton.setBounds(100, 190, 250, 50);
@@ -64,7 +64,7 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
         pacmanFrame.setSize(450, 550);
         pacmanFrame.setVisible(true);
         pacmanFrame.add(newGameButton);
-        pacmanFrame.add(continueGameButton);
+        pacmanFrame.add(instructionButton);
         pacmanFrame.add(backButton);
         pacmanFrame.add(exitButton);
     }
@@ -75,13 +75,16 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
             pacmanFrame.dispose();
             PacManMain pacmanMain = new PacManMain();
             pacmanMain.setVisible(true);
-            pacmanMain.setTitle("Pacman");
-            pacmanMain.setSize(380,420);
+            pacmanMain.setTitle("Pacman Game");
+            ImageIcon pacman = new ImageIcon("pacman.png");
+            pacmanMain.setIconImage(pacman.getImage());
+            pacmanMain.setSize(380, 420);
             pacmanMain.setDefaultCloseOperation(EXIT_ON_CLOSE);
             pacmanMain.setLocationRelativeTo(null);
-        } else if (e.getSource() == continueGameButton) {
+        }else if (e.getSource() == instructionButton){
             pacmanFrame.dispose();
-            //continue game
+            pacmanInstruction();
+            PacmanGameFrame pacmanGameFrame = new PacmanGameFrame();
         }else if(e.getSource() == backButton){
             pacmanFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
@@ -89,5 +92,17 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
             System.exit(0);
         }
     }
-
+    void pacmanInstruction() {
+        ImageIcon pacman = new ImageIcon("pacmanImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "Guide Pacman around the maze and eat all the little dots whilst avoiding ghosts.\n" +
+                        "You can start the game by pressing SPACE on your keyboard and control Pacman with cursor keys.\n" +
+                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts in the bottom of the board).\n" +
+                        "You'll be offered to start a new game right after you loose all your lives.",
+                "Pac-Man Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                pacman
+        );
+    }
 }

@@ -669,6 +669,14 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("X wins");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "X is the winner!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
 
@@ -682,6 +690,14 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("O wins");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "Y is the winner!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }
@@ -690,6 +706,14 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("Game Over");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "Tie result!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }

@@ -11,7 +11,7 @@ public class TictactoeGameFrame extends JFrame implements ActionListener {
 
     JFrame tictactoeFrame;
     JButton newGameButton;
-    JButton continueGameButton;
+    JButton instructionButton;
     JButton backButton;
     JButton exitButton;
 
@@ -27,14 +27,14 @@ public class TictactoeGameFrame extends JFrame implements ActionListener {
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        continueGameButton = new JButton();
-        continueGameButton.setBounds(100, 110, 250, 50);
-        continueGameButton.addActionListener(this);
-        continueGameButton.setText("CONTINUE GAME");
-        continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
-        continueGameButton.setBackground(new Color(225, 220, 96));
-        continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
+        instructionButton = new JButton();
+        instructionButton.setBounds(100, 110, 250, 50);
+        instructionButton.addActionListener(this);
+        instructionButton.setText("INSTRUCTION");
+        instructionButton.setFocusable(false);
+        instructionButton.setFont(new Font("Calibre", Font.BOLD,20));
+        instructionButton.setBackground(new Color(225, 220, 96));
+        instructionButton.setBorder(BorderFactory.createBevelBorder(0));
 
         backButton = new JButton();
         backButton.setBounds(100, 190, 250, 50);
@@ -65,7 +65,7 @@ public class TictactoeGameFrame extends JFrame implements ActionListener {
         tictactoeFrame.setSize(450, 550);
         tictactoeFrame.setVisible(true);
         tictactoeFrame.add(newGameButton);
-        tictactoeFrame.add(continueGameButton);
+        tictactoeFrame.add(instructionButton);
         tictactoeFrame.add(backButton);
         tictactoeFrame.add(exitButton);
     }
@@ -75,14 +75,29 @@ public class TictactoeGameFrame extends JFrame implements ActionListener {
         if (e.getSource() == newGameButton) {
             tictactoeFrame.dispose();
             TicTacToe ticTacToe = new TicTacToe();
-        } else if (e.getSource() == continueGameButton) {
+        }else if (e.getSource() == instructionButton){
             tictactoeFrame.dispose();
-            //continue game
+            tictactoeInstruction();
+            TictactoeGameFrame tictactoeGameFrame = new TictactoeGameFrame();
         }else if(e.getSource() == backButton){
             tictactoeFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
         }else {
             System.exit(0);
         }
+    }
+
+    void tictactoeInstruction() {
+        ImageIcon tictactoe = new ImageIcon("tictactoeImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "The game is played on a 3x3 grid.\n" +
+                        "Player one is X, and player two is O.\n" +
+                        "The first who gets 3 of his marks in a row (up, down, diagonally) is the winner.\n" +
+                        "When all squares are full, game is over.",
+                "Tic-Tac-Toe Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                tictactoe
+        );
     }
 }

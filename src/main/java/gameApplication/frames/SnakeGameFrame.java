@@ -9,7 +9,7 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
 
     JFrame snakeFrame;
     JButton newGameButton;
-    JButton continueGameButton;
+    JButton instructionButton;
     JButton backButton;
     JButton exitButton;
 
@@ -25,14 +25,14 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        continueGameButton = new JButton();
-        continueGameButton.setBounds(100, 110, 250, 50);
-        continueGameButton.addActionListener(this);
-        continueGameButton.setText("CONTINUE GAME");
-        continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
-        continueGameButton.setBackground(new Color(225, 220, 96));
-        continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
+        instructionButton = new JButton();
+        instructionButton.setBounds(100, 110, 250, 50);
+        instructionButton.addActionListener(this);
+        instructionButton.setText("INSTRUCTION");
+        instructionButton.setFocusable(false);
+        instructionButton.setFont(new Font("Calibre", Font.BOLD,20));
+        instructionButton.setBackground(new Color(225, 220, 96));
+        instructionButton.setBorder(BorderFactory.createBevelBorder(0));
 
         backButton = new JButton();
         backButton.setBounds(100, 190, 250, 50);
@@ -63,7 +63,7 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         snakeFrame.setSize(450, 550);
         snakeFrame.setVisible(true);
         snakeFrame.add(newGameButton);
-        snakeFrame.add(continueGameButton);
+        snakeFrame.add(instructionButton);
         snakeFrame.add(backButton);
         snakeFrame.add(exitButton);
     }
@@ -73,15 +73,30 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         if (e.getSource() == newGameButton) {
             snakeFrame.dispose();
             snakeGame.SnakeGameFrame snakeGameFrame = new snakeGame.SnakeGameFrame();
-        } else if (e.getSource() == continueGameButton) {
+        }else if (e.getSource() == instructionButton){
             snakeFrame.dispose();
-            //continue game
+            snakeInstruction();
+            SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
         }else if(e.getSource() == backButton){
             snakeFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
         }else {
             System.exit(0);
         }
+    }
+    void snakeInstruction() {
+        ImageIcon snake = new ImageIcon("snakeImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "In this game the player controls a snake.\n" +
+                        "The objective is to eat as many apples as possible. Each time the snake eats an apple its body grows.\n" +
+                        "The snake must avoid all walls and its own body.\n" +
+                        "You can control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
+                        "If the game is finished, the GAME OVER message is displayed in the middle of the board.",
+                "Snake Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                snake
+        );
     }
 
 }

@@ -4,6 +4,7 @@ import gameApplication.frames.PongGameFrame;
 import score.SnakeScore;
 import snakeGame.SnakeGameFrame;
 import snakeGame.SnakeGameMain;
+import snakeGame.SnakeGamePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,8 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
     JButton scoresButton;
     JButton backButton;
     JButton exitButton;
+
+    SnakeGamePanel snakeGamePanel = new SnakeGamePanel();
 
     public SnakeGameSettingFrame(){
 
@@ -79,7 +82,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
             SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            SnakeScore snakeScore = new SnakeScore();
+            snakeGamePanel.saveFinalScore();
             SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();

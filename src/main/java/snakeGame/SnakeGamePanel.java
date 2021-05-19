@@ -156,6 +156,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
 
         g.dispose();
         SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
+
     }
     public void saveFinalScore() {
 

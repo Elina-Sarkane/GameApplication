@@ -1,6 +1,7 @@
 package snakeGame;
 
 import gameApplication.gameSettings.SnakeGameSettingFrame;
+import score.ScoresManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +30,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
     boolean running = false;
     Timer timer;
     Random random;
+    ScoresManager scoresManager = new ScoresManager();
 
     public SnakeGamePanel(){
         random = new Random();
@@ -147,6 +149,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Calibre", Font.BOLD, 30));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
+        scoresManager.addNewScoreForSpecificGame("Snake", new score.Score("50", "Mary"));
 
         //Game over text
         g.setColor(Color.red);
@@ -158,17 +161,8 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
 
     }
-    public void saveFinalScore() {
+    public void saveFinalScore() {}
 
-        try {
-            BufferedWriter bw = new BufferedWriter(
-                    new FileWriter("snake_score.txt"));
-            bw.write("Snake Game score: " + applesEaten);
-            bw.close();
-        } catch (Exception ex) {
-            return;
-        }
-    }
     @Override
     public void actionPerformed(ActionEvent e) {
 

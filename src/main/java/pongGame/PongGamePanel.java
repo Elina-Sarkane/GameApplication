@@ -1,5 +1,7 @@
 package pongGame;
 
+import score.ScoresManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -22,6 +24,7 @@ public class PongGamePanel extends JPanel implements Runnable {
     PongPaddle pongPaddle2;
     PongBall ball;
     PongGameScore pongGameScore;
+    ScoresManager scoresManager = new ScoresManager();
 
     PongGamePanel(){
         newPaddles();
@@ -112,6 +115,7 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player2++;
             newPaddles();
             newBall();
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("15", "Amy"));
             //System.out.println("Player 2 scored: " + pongGameScore.player2);
         }
 
@@ -119,6 +123,7 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player1++;
             newPaddles();
             newBall();
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("5", "Mark"));
             //System.out.println("Player 1 scored: " + pongGameScore.player1);
         }
     }

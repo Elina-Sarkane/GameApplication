@@ -1,5 +1,7 @@
 package score;
 
+import javax.swing.*;
+
 public class TictactoeScore {
 
     ScoresManager scoresManager = new ScoresManager();
@@ -7,6 +9,7 @@ public class TictactoeScore {
     public void tictactoeScore() {
         for (score.Score score : scoresManager.getAllScores("Tictactoe game")) {
             System.out.println(score.playerName + "  " + score.playerScore);
+
         }
     }
 }

@@ -680,7 +680,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
-        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("wins", "X"));
+        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("1 point", "X"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
 

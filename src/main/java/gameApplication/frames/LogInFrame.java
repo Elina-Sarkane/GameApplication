@@ -1,4 +1,4 @@
-package gameApplication.Frames;
+package gameApplication.frames;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class LogInFrame extends JFrame implements ActionListener {
         newUserButton.addActionListener(this);
         newUserButton.setText("NEW USER");
         newUserButton.setFocusable(false);
-        newUserButton.setFont(new Font("Calibri", Font.BOLD,20));
+        newUserButton.setFont(new Font("Calibre", Font.BOLD,20));
         newUserButton.setBackground(new Color(225, 220, 96));
         newUserButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -30,7 +30,7 @@ public class LogInFrame extends JFrame implements ActionListener {
         existingUserButton.addActionListener(this);
         existingUserButton.setText("EXISTING USER");
         existingUserButton.setFocusable(false);
-        existingUserButton.setFont(new Font("Calibri", Font.BOLD,20));
+        existingUserButton.setFont(new Font("Calibre", Font.BOLD,20));
         existingUserButton.setBackground(new Color(225, 220, 96));
         existingUserButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -39,7 +39,7 @@ public class LogInFrame extends JFrame implements ActionListener {
         scoresButton.addActionListener(this);
         scoresButton.setText("SCORES");
         scoresButton.setFocusable(false);
-        scoresButton.setFont(new Font("Calibri", Font.BOLD,20));
+        scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));
         scoresButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -48,7 +48,7 @@ public class LogInFrame extends JFrame implements ActionListener {
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Calibri", Font.BOLD,20));
+        backButton.setFont(new Font("Calibre", Font.BOLD,20));
         backButton.setBackground(new Color(225, 220, 96));
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -57,7 +57,7 @@ public class LogInFrame extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD,20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 

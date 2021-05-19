@@ -1,27 +1,28 @@
-package gameApplication.Frames;
+package gameApplication.frames;
 
+import pacmanGame.PacManMain;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SnakeGameFrame extends JFrame implements ActionListener {
+public class PacmanGameFrame extends JFrame implements ActionListener {
 
-    JFrame snakeFrame;
+    JFrame pacmanFrame;
     JButton newGameButton;
     JButton continueGameButton;
     JButton backButton;
     JButton exitButton;
 
 
-    public SnakeGameFrame() {
+    public PacmanGameFrame() {
 
         newGameButton = new JButton();
         newGameButton.setBounds(100, 30, 250, 50);
         newGameButton.addActionListener(this);
         newGameButton.setText("NEW GAME");
         newGameButton.setFocusable(false);
-        newGameButton.setFont(new Font("Calibri", Font.BOLD,20));
+        newGameButton.setFont(new Font("Calibre", Font.BOLD,20));
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -30,7 +31,7 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         continueGameButton.addActionListener(this);
         continueGameButton.setText("CONTINUE GAME");
         continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibri", Font.BOLD,20));
+        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
         continueGameButton.setBackground(new Color(225, 220, 96));
         continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -39,7 +40,7 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Calibri", Font.BOLD,20));
+        backButton.setFont(new Font("Calibre", Font.BOLD,20));
         backButton.setBackground(new Color(225, 220, 96));
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -48,36 +49,41 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD,20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        snakeFrame = new JFrame();
-        snakeFrame.setTitle("Snake game!");
+        pacmanFrame = new JFrame();
+        pacmanFrame.setTitle("Pac-Man Game!");
         ImageIcon chooseGameImage = new ImageIcon("menuImage.png");
-        snakeFrame.setIconImage(chooseGameImage.getImage());
-        snakeFrame.setResizable(false);
-        snakeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        snakeFrame.getContentPane().setBackground(new Color(151, 186, 213));
-        snakeFrame.setLayout(null);
-        snakeFrame.setSize(450, 550);
-        snakeFrame.setVisible(true);
-        snakeFrame.add(newGameButton);
-        snakeFrame.add(continueGameButton);
-        snakeFrame.add(backButton);
-        snakeFrame.add(exitButton);
+        pacmanFrame.setIconImage(chooseGameImage.getImage());
+        pacmanFrame.setResizable(false);
+        pacmanFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pacmanFrame.getContentPane().setBackground(new Color(151, 186, 213));
+        pacmanFrame.setLayout(null);
+        pacmanFrame.setSize(450, 550);
+        pacmanFrame.setVisible(true);
+        pacmanFrame.add(newGameButton);
+        pacmanFrame.add(continueGameButton);
+        pacmanFrame.add(backButton);
+        pacmanFrame.add(exitButton);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == newGameButton) {
-            snakeFrame.dispose();
-            snakeGame.SnakeGameFrame snakeGameFrame = new snakeGame.SnakeGameFrame();
+            pacmanFrame.dispose();
+            PacManMain pacmanMain = new PacManMain();
+            pacmanMain.setVisible(true);
+            pacmanMain.setTitle("Pacman");
+            pacmanMain.setSize(380,420);
+            pacmanMain.setDefaultCloseOperation(EXIT_ON_CLOSE);
+            pacmanMain.setLocationRelativeTo(null);
         } else if (e.getSource() == continueGameButton) {
-            snakeFrame.dispose();
+            pacmanFrame.dispose();
             //continue game
         }else if(e.getSource() == backButton){
-            snakeFrame.dispose();
+            pacmanFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
         }else {
             System.exit(0);

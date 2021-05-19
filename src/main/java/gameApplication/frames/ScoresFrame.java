@@ -1,4 +1,4 @@
-package gameApplication.Frames;
+package gameApplication.frames;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +23,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         allScoresButton.addActionListener(this);
         allScoresButton.setText("ALL SCORES");
         allScoresButton.setFocusable(false);
-        allScoresButton.setFont(new Font("Calibri", Font.BOLD,20));
+        allScoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         allScoresButton.setBackground(new Color(225, 220, 96));
         allScoresButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -32,7 +32,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         tictactoeScoreButton.addActionListener(this);
         tictactoeScoreButton.setText("TIC-TAC-TOE SCORES");
         tictactoeScoreButton.setFocusable(false);
-        tictactoeScoreButton.setFont(new Font("Calibri", Font.BOLD,20));
+        tictactoeScoreButton.setFont(new Font("Calibre", Font.BOLD,20));
         tictactoeScoreButton.setBackground(new Color(225, 220, 96));
         tictactoeScoreButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -41,7 +41,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         pongScoreButton.addActionListener(this);
         pongScoreButton.setText("PONG SCORES");
         pongScoreButton.setFocusable(false);
-        pongScoreButton.setFont(new Font("Calibri", Font.BOLD,20));
+        pongScoreButton.setFont(new Font("Calibre", Font.BOLD,20));
         pongScoreButton.setBackground(new Color(225, 220, 96));
         pongScoreButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -50,7 +50,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         snakeScoreButton.addActionListener(this);
         snakeScoreButton.setText("SNAKE SCORES");
         snakeScoreButton.setFocusable(false);
-        snakeScoreButton.setFont(new Font("Calibri", Font.BOLD,20));
+        snakeScoreButton.setFont(new Font("Calibre", Font.BOLD,20));
         snakeScoreButton.setBackground(new Color(225, 220, 96));
         snakeScoreButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -59,7 +59,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         pacmanScoreButton.addActionListener(this);
         pacmanScoreButton.setText("PAC-MAN SCORES");
         pacmanScoreButton.setFocusable(false);
-        pacmanScoreButton.setFont(new Font("Calibri", Font.BOLD,20));
+        pacmanScoreButton.setFont(new Font("Calibre", Font.BOLD,20));
         pacmanScoreButton.setBackground(new Color(225, 220, 96));
         pacmanScoreButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -68,7 +68,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Calibri", Font.BOLD,20));
+        backButton.setFont(new Font("Calibre", Font.BOLD,20));
         backButton.setBackground(new Color(225, 220, 96));
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
@@ -76,7 +76,7 @@ public class ScoresFrame extends JFrame implements ActionListener {
         exitButton.setBounds(100, 510, 250, 50);
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");exitButton.setFocusable(false);
-        exitButton.setFont(new Font("Calibri", Font.BOLD,20));
+        exitButton.setFont(new Font("Calibre", Font.BOLD,20));
         exitButton.setBackground(new Color(225, 220, 96));
         exitButton.setBorder(BorderFactory.createBevelBorder(0));
 

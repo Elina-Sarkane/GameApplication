@@ -28,6 +28,7 @@ public class PongGamePanel extends JPanel implements Runnable {
         newBall();
         pongGameScore = new PongGameScore(GAME_WIDTH, GAME_HEIGHT);
         this.setFocusable(true);
+        this.setLayout(null);
         this.addKeyListener(new ActionListener());
         this.setPreferredSize(SCREEN_SIZE);
 
@@ -140,7 +141,6 @@ public class PongGamePanel extends JPanel implements Runnable {
     }
     public class ActionListener extends KeyAdapter {
         public void keyPressed(KeyEvent e){
-
             pongPaddle1.keyPressed(e);
             pongPaddle2.keyPressed(e);
         }

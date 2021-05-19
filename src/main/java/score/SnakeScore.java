@@ -1,20 +1,12 @@
 package score;
 
-import snakeGame.SnakeGamePanel;
-
-import javax.swing.*;
-
 public class SnakeScore {
 
-    SnakeGamePanel snakeGamePanel = new SnakeGamePanel();
-    public SnakeScore() {
-        ImageIcon trophy = new ImageIcon("trophy.png");
-        JOptionPane.showMessageDialog(
-                null,
-                "Score saved!",
-                "Score!",
-                JOptionPane.INFORMATION_MESSAGE,
-                trophy
-        );
+    ScoresManager scoresManager = new ScoresManager();
+
+    public void snake() {
+        for (Score.Score score : scoresManager.getAllScores("Snake")) {
+            System.out.println(score.playerName + "  " + score.playerScore);
+        }
     }
 }

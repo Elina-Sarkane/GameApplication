@@ -1,5 +1,8 @@
 package pacmanGame;
 
+import gameApplication.gameSettings.PacmanGameSettingFrame;
+import gameApplication.gameSettings.SnakeGameSettingFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -110,7 +113,7 @@ public class PacManPanel extends JPanel implements ActionListener {
 
         String start = "Press SPACE to start";
         g2d.setColor(Color.yellow);
-        g2d.drawString(start, (SCREEN_SIZE)/4, 150);
+        g2d.drawString(start, (SCREEN_SIZE) / 4, 150);
     }
 
     private void drawScore(Graphics2D g) {
@@ -397,10 +400,9 @@ public class PacManPanel extends JPanel implements ActionListener {
 
         if (inGame) {
             playGame(g2d);
-        } else {
+        } else{
             showIntroScreen(g2d);
         }
-
         Toolkit.getDefaultToolkit().sync();
         g2d.dispose();
     }
@@ -439,10 +441,8 @@ public class PacManPanel extends JPanel implements ActionListener {
         }
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        repaint();
-    }
-
+            repaint();
+        }
 }

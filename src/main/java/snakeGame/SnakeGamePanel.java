@@ -30,7 +30,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
     Timer timer;
     Random random;
 
-    SnakeGamePanel(){
+    public SnakeGamePanel(){
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBackground(Color.black);
@@ -79,8 +79,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         }
         else {
             gameOver(g);
-
-           // SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
+            saveFinalScore();
         }
     }
     public void newApple() {
@@ -155,15 +154,20 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
 
-        try{
+        g.dispose();
+        SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
+
+    }
+    public void saveFinalScore() {
+
+        try {
             BufferedWriter bw = new BufferedWriter(
                     new FileWriter("snake_score.txt"));
             bw.write("Snake Game score: " + applesEaten);
             bw.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             return;
         }
-
     }
     @Override
     public void actionPerformed(ActionEvent e) {

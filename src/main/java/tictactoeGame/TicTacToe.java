@@ -1,6 +1,7 @@
 package tictactoeGame;
 
 import gameApplication.gameSettings.TicTacToeGameSettingFrame;
+import score.ScoresManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,8 @@ public class TicTacToe implements ActionListener {
     JButton settingButton;
     JPanel settingPanel;
     boolean player1_turn;
+
+    ScoresManager scoresManager = new ScoresManager();
 
    public TicTacToe(){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -669,6 +672,15 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("X wins");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "X is the winner!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("wins", "X"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
 
@@ -682,6 +694,15 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("O wins");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "O is the winner!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("wins", "O"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }
@@ -690,6 +711,15 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textField.setText("Game Over");
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "Tie result!",
+                "Results!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("tie", "tie"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }

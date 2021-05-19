@@ -31,6 +31,7 @@ public class PongGamePanel extends JPanel implements Runnable {
         this.setLayout(null);
         this.addKeyListener(new ActionListener());
         this.setPreferredSize(SCREEN_SIZE);
+        this.setVisible(true);
 
         gameThread = new Thread(this);
         gameThread.start();
@@ -111,14 +112,14 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player2++;
             newPaddles();
             newBall();
-            System.out.println("Player 2 scored: " + pongGameScore.player2);
+            //System.out.println("Player 2 scored: " + pongGameScore.player2);
         }
 
         if(ball.x >= GAME_WIDTH-BALL_DIAMETER){
             pongGameScore.player1++;
             newPaddles();
             newBall();
-            System.out.println("Player 1 scored: " + pongGameScore.player1);
+            //System.out.println("Player 1 scored: " + pongGameScore.player1);
         }
     }
     public void run(){

@@ -8,7 +8,7 @@ public class PongGameFrame extends JFrame implements ActionListener {
 
     JFrame pongFrame;
     JButton newGameButton;
-    JButton continueGameButton;
+    JButton instructionButton;
     JButton backButton;
     JButton exitButton;
 
@@ -24,14 +24,14 @@ public class PongGameFrame extends JFrame implements ActionListener {
         newGameButton.setBackground(new Color(225, 220, 96));
         newGameButton.setBorder(BorderFactory.createBevelBorder(0));
 
-        continueGameButton = new JButton();
-        continueGameButton.setBounds(100, 110, 250, 50);
-        continueGameButton.addActionListener(this);
-        continueGameButton.setText("CONTINUE GAME");
-        continueGameButton.setFocusable(false);
-        continueGameButton.setFont(new Font("Calibre", Font.BOLD,20));
-        continueGameButton.setBackground(new Color(225, 220, 96));
-        continueGameButton.setBorder(BorderFactory.createBevelBorder(0));
+        instructionButton = new JButton();
+        instructionButton.setBounds(100, 110, 250, 50);
+        instructionButton.addActionListener(this);
+        instructionButton.setText("INSTRUCTION");
+        instructionButton.setFocusable(false);
+        instructionButton.setFont(new Font("Calibre", Font.BOLD,20));
+        instructionButton.setBackground(new Color(225, 220, 96));
+        instructionButton.setBorder(BorderFactory.createBevelBorder(0));
 
         backButton = new JButton();
         backButton.setBounds(100, 190, 250, 50);
@@ -62,7 +62,7 @@ public class PongGameFrame extends JFrame implements ActionListener {
         pongFrame.setSize(450, 550);
         pongFrame.setVisible(true);
         pongFrame.add(newGameButton);
-        pongFrame.add(continueGameButton);
+        pongFrame.add(instructionButton);
         pongFrame.add(backButton);
         pongFrame.add(exitButton);
     }
@@ -72,14 +72,28 @@ public class PongGameFrame extends JFrame implements ActionListener {
         if (e.getSource() == newGameButton) {
             pongFrame.dispose();
             pongGame.PongGameFrame pongGameFrame = new pongGame.PongGameFrame();
-        } else if (e.getSource() == continueGameButton) {
+        }else if (e.getSource() == instructionButton){
             pongFrame.dispose();
-            //continue game
+            pongInstruction();
+            PongGameFrame pongGameFrame = new PongGameFrame();
         }else if(e.getSource() == backButton){
             pongFrame.dispose();
             ChooseGameFrame chooseGameFrame = new ChooseGameFrame();
         }else {
             System.exit(0);
         }
+    }
+    void pongInstruction() {
+        ImageIcon pong = new ImageIcon("pongImage.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "The game principles is similar as in real life ping pong game.\n" +
+                        "Player 1 is BLUE, on the left side, move paddle by pressing W (goes up) and S (goes down) on your keyboard.\n" +
+                        "Player 2 ir RED, on the right side, move paddle by pressing UP and DOWN keys on your keyboard.\n" +
+                        "Every player gets a point if it doesn't miss the ball",
+                "Pong Game Instruction!",
+                JOptionPane.INFORMATION_MESSAGE,
+                pong
+        );
     }
 }

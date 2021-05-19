@@ -42,7 +42,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         scoresButton = new JButton();
         scoresButton.setBounds(100, 190, 250, 50);
         scoresButton.addActionListener(this);
-        scoresButton.setText("SCORES");
+        scoresButton.setText("SAVE SCORE");
         scoresButton.setFocusable(false);
         scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));

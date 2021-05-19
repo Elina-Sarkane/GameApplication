@@ -3,6 +3,8 @@ package gameApplication.login;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class LogInMain implements ActionListener {
 
@@ -57,10 +59,19 @@ public class LogInMain implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String user = userText.getText();
         String password = passwordText.getText();
-        System.out.println(user + " , " + password);
+        //System.out.println(user + " , " + password);
 
-        if(user.equals("Alex") && password.equals("abc")){
-            success.setText("Log in successfull");
+        try{
+            FileWriter writer = new FileWriter("user_names.txt");
+            writer.write("Username: " + user + "\nPassword: " + password);
+            writer.close();
         }
+        catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
+        //if(user.equals("Alex") && password.equals("abc")){
+            //success.setText("Log in successfull");
+        //}
     }
 }

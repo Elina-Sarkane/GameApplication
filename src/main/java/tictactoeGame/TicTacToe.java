@@ -1,6 +1,7 @@
 package tictactoeGame;
 
 import gameApplication.gameSettings.TicTacToeGameSettingFrame;
+import score.ScoresManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,8 @@ public class TicTacToe implements ActionListener {
     JButton settingButton;
     JPanel settingPanel;
     boolean player1_turn;
+
+    ScoresManager scoresManager = new ScoresManager();
 
    public TicTacToe(){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -677,6 +680,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("wins", "X"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
 
@@ -698,6 +702,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("wins", "O"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }
@@ -714,6 +719,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
+        scoresManager.addNewScoreForSpecificGame("Tictactoe", new Score.Score("tie", "tie"));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }

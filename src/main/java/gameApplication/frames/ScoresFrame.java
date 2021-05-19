@@ -1,9 +1,6 @@
 package gameApplication.frames;
 
-import score.PacmanScore;
-import score.PongScore;
-import score.SnakeScore;
-import score.TictactoeScore;
+import score.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -111,16 +108,24 @@ public class ScoresFrame extends JFrame implements ActionListener {
                 //allscores
             }else if(e.getSource() == tictactoeScoreButton){
                 scoresFrame.dispose();
-                TictactoeScore tictactoeScore = new TictactoeScore();
+                ScoresManager iNeedMyScoreManager = new ScoresManager();
+                iNeedMyScoreManager.getAllScores("Tictactoe game").forEach(TictactoeScore::showScore);
+                ScoresFrame scoresFrame = new ScoresFrame();
             }else if(e.getSource() == pongScoreButton) {
                 scoresFrame.dispose();
-                PongScore pongScore = new PongScore();
+                ScoresManager iNeedMyScoreManager = new ScoresManager();
+                iNeedMyScoreManager.getAllScores("Pong game").forEach(PongScore::showScore);
+                ScoresFrame scoresFrame = new ScoresFrame();
             }else if(e.getSource() == snakeScoreButton) {
                 scoresFrame.dispose();
-                SnakeScore snakeScore = new SnakeScore();
+                ScoresManager iNeedMyScoreManager = new ScoresManager();
+                iNeedMyScoreManager.getAllScores("Snake game").forEach(SnakeScore::showScore);
+                ScoresFrame scoresFrame = new ScoresFrame();
             }else if(e.getSource() == pacmanScoreButton) {
                 scoresFrame.dispose();
-                PacmanScore pacmanScore = new PacmanScore();
+                ScoresManager iNeedMyScoreManager = new ScoresManager();
+                iNeedMyScoreManager.getAllScores("Pacman game").forEach(PacmanScore::showScore);
+                ScoresFrame scoresFrame = new ScoresFrame();
             }else if (e.getSource() == backButton){
                 scoresFrame.dispose();
                 GameMenuFrame gameMenuFrame = new GameMenuFrame();

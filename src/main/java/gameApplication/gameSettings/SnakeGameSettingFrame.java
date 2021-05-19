@@ -1,6 +1,8 @@
 package gameApplication.gameSettings;
 
 import gameApplication.frames.PongGameFrame;
+import score.PacmanScore;
+import score.ScoresManager;
 import score.SnakeScore;
 import snakeGame.SnakeGameFrame;
 import snakeGame.SnakeGameMain;
@@ -35,7 +37,7 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
         scoresButton = new JButton();
         scoresButton.setBounds(100, 110, 250, 50);
         scoresButton.addActionListener(this);
-        scoresButton.setText("SAVE SCORE");
+        scoresButton.setText("VIEW SCORE");
         scoresButton.setFocusable(false);
         scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));
@@ -82,7 +84,9 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
             SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            snakeGamePanel.saveFinalScore();
+            //snakeGamePanel.saveFinalScore();
+            ScoresManager iNeedMyScoreManager = new ScoresManager();
+            iNeedMyScoreManager.getAllScores("Snake game").forEach(PacmanScore::showScore);
             SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();

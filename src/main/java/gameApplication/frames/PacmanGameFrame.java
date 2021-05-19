@@ -97,9 +97,9 @@ public class PacmanGameFrame extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(
                 null,
                 "Guide Pacman around the maze and eat all the little dots whilst avoiding ghosts.\n" +
-                        "You can start the game by pressing SPACE on your keyboard and control Pacman with cursor keys.\n" +
-                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts in the bottom of the board).\n" +
-                        "You'll be offered to start a new game right after you loose all your lives.",
+                        "Start game by pressing SPACE on your keyboard, control Pacman with cursor keys.\n" +
+                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts).\n" +
+                        "When you loose all lives, the settings will open, press NEW GAME, to play again.",
                 "Pac-Man Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 pacman

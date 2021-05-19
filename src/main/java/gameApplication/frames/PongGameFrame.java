@@ -87,10 +87,11 @@ public class PongGameFrame extends JFrame implements ActionListener {
         ImageIcon pong = new ImageIcon("pongImage.png");
         JOptionPane.showMessageDialog(
                 null,
-                "The game principles is similar as in real life ping pong game.\n" +
+                "The game principle is similar as in real life ping pong game.\n" +
                         "Player 1 is BLUE, on the left side, move paddle by pressing W (goes up) and S (goes down) on your keyboard.\n" +
                         "Player 2 ir RED, on the right side, move paddle by pressing UP and DOWN keys on your keyboard.\n" +
-                        "Every player gets a point if it doesn't miss the ball",
+                        "You get a score every time when the paddle hits the ball.\n" +
+                        "To STOP the game, press exit on the frame right up side!",
                 "Pong Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 pong

@@ -2,7 +2,9 @@ package gameApplication.gameSettings;
 
 import gameApplication.frames.PongGameFrame;
 import pongGame.PongGameScore;
+import score.PacmanScore;
 import score.PongScore;
+import score.ScoresManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,7 +33,7 @@ public class PongGameSettingFrame extends JFrame implements ActionListener {
         scoresButton = new JButton();
         scoresButton.setBounds(100, 110, 250, 50);
         scoresButton.addActionListener(this);
-        scoresButton.setText("SAVE SCORE");
+        scoresButton.setText("VIEW SCORE");
         scoresButton.setFocusable(false);
         scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));
@@ -78,7 +80,9 @@ public class PongGameSettingFrame extends JFrame implements ActionListener {
             pongGame.PongGameFrame pongGameFrame = new pongGame.PongGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            PongScore pongScore = new PongScore();
+            ScoresManager iNeedMyScoreManager = new ScoresManager();
+            iNeedMyScoreManager.getAllScores("Pong game").forEach(PacmanScore::showScore);
+            PongGameSettingFrame pongGameSettingFrame = new PongGameSettingFrame();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             PongGameFrame pongGameFrame = new PongGameFrame();

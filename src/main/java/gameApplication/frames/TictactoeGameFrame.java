@@ -94,7 +94,7 @@ public class TictactoeGameFrame extends JFrame implements ActionListener {
                 "The game is played on a 3x3 grid.\n" +
                         "Player one is X, and player two is O.\n" +
                         "The first who gets 3 of his marks in a row (up, down, diagonally) is the winner.\n" +
-                        "When all squares are full, game is over.",
+                        "When all squares are full, it's a tie and game is over.",
                 "Tic-Tac-Toe Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 tictactoe

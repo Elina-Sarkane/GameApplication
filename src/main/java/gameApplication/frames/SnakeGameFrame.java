@@ -89,9 +89,9 @@ public class SnakeGameFrame extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(
                 null,
                 "In this game the player controls a snake.\n" +
-                        "The objective is to eat as many apples as possible. Each time the snake eats an apple its body grows.\n" +
+                        "The objective is to eat as many apples as possible. Each time the snake eats an apple, its body grows.\n" +
                         "The snake must avoid all walls and its own body.\n" +
-                        "You can control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
+                        "Control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
                         "If the game is finished, the GAME OVER message is displayed in the middle of the board.",
                 "Snake Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,

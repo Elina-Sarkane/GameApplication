@@ -96,7 +96,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
                 "The game is played on a 3x3 grid.\n" +
                         "Player one is X, and player two is O.\n" +
                         "The first who gets 3 of his marks in a row (up, down, diagonally) is the winner.\n" +
-                        "When all squares are full, game is over.",
+                        "When all squares are full, it's a tie and game is over.",
                 "Tic-Tac-Toe Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 tictactoe
@@ -106,10 +106,11 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         ImageIcon pong = new ImageIcon("pongImage.png");
         JOptionPane.showMessageDialog(
                 null,
-                "The game principles is similar as in real life ping pong game.\n" +
+                "The game principle is similar as in real life ping pong game.\n" +
                         "Player 1 is BLUE, on the left side, move paddle by pressing W (goes up) and S (goes down) on your keyboard.\n" +
                         "Player 2 ir RED, on the right side, move paddle by pressing UP and DOWN keys on your keyboard.\n" +
-                        "Every player gets a point if it doesn't miss the ball",
+                        "You get a score every time when the paddle hits the ball.\n" +
+                        "To STOP the game, press exit on the frame right up side!",
                 "Pong Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 pong
@@ -120,9 +121,9 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(
                 null,
                 "In this game the player controls a snake.\n" +
-                        "The objective is to eat as many apples as possible. Each time the snake eats an apple its body grows.\n" +
+                        "The objective is to eat as many apples as possible. Each time the snake eats an apple, its body grows.\n" +
                         "The snake must avoid all walls and its own body.\n" +
-                        "You can control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
+                        "Control the snake with the cursor keys - UP, DOWN, LEFT and RIGHT\n" +
                         "If the game is finished, the GAME OVER message is displayed in the middle of the board.",
                 "Snake Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
@@ -134,9 +135,9 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(
                 null,
                 "Guide Pacman around the maze and eat all the little dots whilst avoiding ghosts.\n" +
-                        "You can start the game by pressing SPACE on your keyboard and control Pacman with cursor keys.\n" +
-                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts in the bottom of the board).\n" +
-                        "You'll be offered to start a new game right after you loose all your lives.",
+                        "Start game by pressing SPACE on your keyboard, control Pacman with cursor keys.\n" +
+                        "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts).\n" +
+                        "When you loose all lives, the settings will open, press NEW GAME, to play again.",
                 "Pac-Man Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 pacman

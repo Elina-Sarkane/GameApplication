@@ -2,6 +2,8 @@ package pongGame;
 
 import score.ScoresManager;
 
+import gameApplication.gameSettings.PongGameSettingFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -38,7 +40,7 @@ public class PongGamePanel extends JPanel implements Runnable {
 
         gameThread = new Thread(this);
         gameThread.start();
-
+        PongGameSettingFrame pongGameSettingFrame = new PongGameSettingFrame();
     }
 
     public void newBall(){
@@ -111,12 +113,12 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongPaddle2.y = GAME_HEIGHT-PADDLE_HEIGHT;
 
         //give player 1 point, creates new paddles and ball
-        if(ball.x <= 0){
+        if(ball.x <= 0) {
             pongGameScore.player2++;
             newPaddles();
             newBall();
             scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("15", "Amy"));
-            //System.out.println("Player 2 scored: " + pongGameScore.player2);
+            System.out.println("Player 2 scored: " + pongGameScore.player2);
         }
 
         if(ball.x >= GAME_WIDTH-BALL_DIAMETER){
@@ -124,7 +126,7 @@ public class PongGamePanel extends JPanel implements Runnable {
             newPaddles();
             newBall();
             scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("5", "Mark"));
-            //System.out.println("Player 1 scored: " + pongGameScore.player1);
+            System.out.println("Player 1 scored: " + pongGameScore.player1);
         }
     }
     public void run(){

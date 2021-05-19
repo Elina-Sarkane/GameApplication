@@ -1,5 +1,7 @@
 package gameApplication.gameSettings;
 import gameApplication.frames.TictactoeGameFrame;
+import score.PacmanScore;
+import score.ScoresManager;
 import score.TictactoeScore;
 import tictactoeGame.TicTacToe;
 
@@ -30,7 +32,7 @@ public class TicTacToeGameSettingFrame extends JFrame implements ActionListener 
         scoresButton = new JButton();
         scoresButton.setBounds(100, 110, 250, 50);
         scoresButton.addActionListener(this);
-        scoresButton.setText("SAVE SCORE");
+        scoresButton.setText("VIEW SCORE");
         scoresButton.setFocusable(false);
         scoresButton.setFont(new Font("Calibre", Font.BOLD,20));
         scoresButton.setBackground(new Color(225, 220, 96));
@@ -77,7 +79,9 @@ public class TicTacToeGameSettingFrame extends JFrame implements ActionListener 
             TicTacToe ticTacToe = new TicTacToe();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            TictactoeScore tictactoeScore = new TictactoeScore();
+            ScoresManager iNeedMyScoreManager = new ScoresManager();
+            iNeedMyScoreManager.getAllScores("Tictactoe game").forEach(PacmanScore::showScore);
+            TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             TictactoeGameFrame tictactoeGameFrame = new TictactoeGameFrame();

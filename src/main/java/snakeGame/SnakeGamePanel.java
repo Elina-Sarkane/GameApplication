@@ -149,7 +149,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Calibre", Font.BOLD, 30));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
-        scoresManager.addNewScoreForSpecificGame("Snake game", new score.Score("50", "Mary"));
+        scoresManager.addNewScoreForSpecificGame("Snake", new score.Score("50", "Mary"));
 
         //Game over text
         g.setColor(Color.red);

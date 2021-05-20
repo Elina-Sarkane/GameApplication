@@ -12,7 +12,7 @@ public class PongGameFrame extends JFrame{
         pongGamePanel = new PongGamePanel();
 
         this.add(pongGamePanel);
-        this.setTitle("Ping Pong Game!");
+        this.setTitle("Pong Game!");
         ImageIcon image = new ImageIcon("pongImage.png");
         this.setIconImage(image.getImage());
         this.setResizable(false);

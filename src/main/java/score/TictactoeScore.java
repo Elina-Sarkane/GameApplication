@@ -5,6 +5,7 @@ import javax.swing.*;
 public class TictactoeScore {
 
     ScoresManager scoresManager = new ScoresManager();
+
     public static void showScore(Score score) {
        System.out.println(score.playerName + "  " + score.playerScore);
     }

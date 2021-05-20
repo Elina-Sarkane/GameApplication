@@ -680,7 +680,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
-        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("1 point", "X"));
+        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("1 point", "X gets "));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
 
@@ -702,7 +702,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
-        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("1 point", "O"));
+        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("1 point", "O gets "));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }
@@ -719,7 +719,7 @@ public class TicTacToe implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE,
                 trophy
         );
-        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("tie", "tie"));
+        scoresManager.addNewScoreForSpecificGame("Tictactoe game", new score.Score("0 points", "It's a tie "));
         frame.dispose();
         TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
     }

@@ -15,6 +15,7 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
     JFrame gameSettingFrame;
     JButton newGameButton;
     JButton scoresButton;
+    JButton resetScore;
     JButton backButton;
     JButton exitButton;
 
@@ -38,8 +39,17 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
         scoresButton.setBackground(new Color(225, 220, 96));
         scoresButton.setBorder(BorderFactory.createBevelBorder(0));
 
+        resetScore = new JButton();
+        resetScore.setBounds(100, 190, 250, 50);
+        resetScore.addActionListener(this);
+        resetScore.setText("RESET SCORE");
+        resetScore.setFocusable(false);
+        resetScore.setFont(new Font("Calibre", Font.BOLD,20));
+        resetScore.setBackground(new Color(225, 220, 96));
+        resetScore.setBorder(BorderFactory.createBevelBorder(0));
+
         backButton = new JButton();
-        backButton.setBounds(100, 190, 250, 50);
+        backButton.setBounds(100, 270, 250, 50);
         backButton.addActionListener(this);
         backButton.setText("GO BACK");
         backButton.setFocusable(false);
@@ -48,7 +58,7 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
         exitButton = new JButton();
-        exitButton.setBounds(100, 270, 250, 50);
+        exitButton.setBounds(100, 360, 250, 50);
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
@@ -68,6 +78,7 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
         gameSettingFrame.setVisible(true);
         gameSettingFrame.add(newGameButton);
         gameSettingFrame.add(scoresButton);
+        gameSettingFrame.add(resetScore);
         gameSettingFrame.add(backButton);
         gameSettingFrame.add(exitButton);
     }
@@ -82,6 +93,9 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
             ScoresManager iNeedMyScoreManager = new ScoresManager();
             iNeedMyScoreManager.getAllScores("Pacman game").forEach(PacmanScore::showScore);
             PacmanGameSettingFrame pacmanGameSettingFrame = new PacmanGameSettingFrame();
+        }else if (e.getSource() == resetScore){
+            ScoresManager gameScoreManager = new ScoresManager();
+            gameScoreManager.removeScoresFile("Pacman game");
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             PacmanGameFrame pacmanGameFrame = new PacmanGameFrame();

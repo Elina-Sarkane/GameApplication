@@ -2,6 +2,7 @@ package pacmanGame;
 
 import gameApplication.gameSettings.PacmanGameSettingFrame;
 import gameApplication.gameSettings.SnakeGameSettingFrame;
+import score.ScoresManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,6 +34,7 @@ public class PacManPanel extends JPanel implements ActionListener {
 
     private int pacman_x, pacman_y, pacmand_x, pacmand_y;
     private int req_dx, req_dy;
+    ScoresManager scoresManager = new ScoresManager();
 
     private final short levelData[] = {
             19, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 22,
@@ -164,6 +166,8 @@ public class PacManPanel extends JPanel implements ActionListener {
         if (lives == 0) {
             inGame = false;
         }
+
+        scoresManager.addNewScoreForSpecificGame("Pacman game", new score.Score("30", "Player"));
 
         continueLevel();
     }

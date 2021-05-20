@@ -1,11 +1,8 @@
 package gameApplication.gameSettings;
 
-import gameApplication.frames.PongGameFrame;
-import score.PacmanScore;
 import score.ScoresManager;
 import score.SnakeScore;
 import snakeGame.SnakeGameFrame;
-import snakeGame.SnakeGameMain;
 import snakeGame.SnakeGamePanel;
 
 import javax.swing.*;
@@ -95,13 +92,19 @@ public class SnakeGameSettingFrame extends JFrame implements ActionListener {
             SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            //snakeGamePanel.saveFinalScore();
-            ScoresManager iNeedMyScoreManager = new ScoresManager();
-            iNeedMyScoreManager.getAllScores("Snake game").forEach(PacmanScore::showScore);
+            SnakeScore snakeScore = new SnakeScore();
             SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
         }else if (e.getSource() == resetScore){
             ScoresManager gameScoreManager = new ScoresManager();
             gameScoreManager.removeScoresFile("Snake game");
+            ImageIcon delete = new ImageIcon("delete.png");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Scores deleted successfully!",
+                    "Snake scores deleted!",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    delete
+            );
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             gameApplication.frames.SnakeGameFrame snakeGameFrame = new gameApplication.frames.SnakeGameFrame();

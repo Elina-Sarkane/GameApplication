@@ -137,7 +137,7 @@ public class InstructionGameFrame extends JFrame implements ActionListener {
                 "Guide Pacman around the maze and eat all the little dots whilst avoiding ghosts.\n" +
                         "Start game by pressing SPACE on your keyboard, control Pacman with cursor keys.\n" +
                         "Pacman has 3 lives, each time a ghost catches you, you'll loose one live (displayed as red hearts).\n" +
-                        "When you loose all lives, the settings will open, press NEW GAME, to play again.",
+                        "When you loose all lives, press ESCAPE key on your keyboard and then press NEW GAME, to play again.",
                 "Pac-Man Game Instruction!",
                 JOptionPane.INFORMATION_MESSAGE,
                 pacman

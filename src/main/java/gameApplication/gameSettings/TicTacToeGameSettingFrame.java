@@ -1,6 +1,5 @@
 package gameApplication.gameSettings;
 import gameApplication.frames.TictactoeGameFrame;
-import score.PacmanScore;
 import score.ScoresManager;
 import score.TictactoeScore;
 import tictactoeGame.TicTacToe;
@@ -90,12 +89,19 @@ public class TicTacToeGameSettingFrame extends JFrame implements ActionListener 
             TicTacToe ticTacToe = new TicTacToe();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            ScoresManager iNeedMyScoreManager = new ScoresManager();
-            iNeedMyScoreManager.getAllScores("Tictactoe game").forEach(PacmanScore::showScore);
+            TictactoeScore tictactoeScore = new TictactoeScore();
             TicTacToeGameSettingFrame ticTacToeGameSettingFrame = new TicTacToeGameSettingFrame();
         }else if (e.getSource() == resetScore){
             ScoresManager gameScoreManager = new ScoresManager();
             gameScoreManager.removeScoresFile("Tictactoe game");
+            ImageIcon delete = new ImageIcon("delete.png");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Scores deleted successfully!",
+                    "Tic-Tac-Toe scores deleted!",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    delete
+            );
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             TictactoeGameFrame tictactoeGameFrame = new TictactoeGameFrame();

@@ -2,29 +2,30 @@ package score;
 
 import javax.swing.*;
 
-public class TictactoeScore {
+public class TictactoeScore{
 
-    ScoresManager scoresManager = new ScoresManager();
+    ImageIcon icon = new ImageIcon("trophy.png");
+    JLabel tictactoeScore = new JLabel("", icon, 0);
 
-    public static void showScore(Score score) {
-       System.out.println(score.playerName + "  " + score.playerScore);
-    }
+    public TictactoeScore() {
 
-    /*public void tictactoeScore() {
+        String scoreValues = "";
 
+        ScoresManager iNeedMyScoreManager = new ScoresManager();
+        for (score.Score score : iNeedMyScoreManager.getAllScores("Tictactoe game")) {
 
-
-        for (score.Score score : scoresManager.getAllScores("Tictactoe game")) {
-            System.out.println(score.playerName + "  " + score.playerScore);
-
-            ImageIcon tictactoe = new ImageIcon("tictactoeImage.png");
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Score is ",
-                    "Score",
-                    JOptionPane.INFORMATION_MESSAGE,
-                    tictactoe
-            );
+            scoreValues += score.playerName + " " + score.playerScore + "\n";
         }
-    }*/
+
+        tictactoeScore.setText(scoreValues);
+
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "\n" + scoreValues,
+                "Tic-Tac-Toe Game Scores!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
+    }
 }

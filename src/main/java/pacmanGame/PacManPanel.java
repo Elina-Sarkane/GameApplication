@@ -1,8 +1,7 @@
 package pacmanGame;
 
 import gameApplication.gameSettings.PacmanGameSettingFrame;
-import gameApplication.gameSettings.SnakeGameSettingFrame;
-
+import score.ScoresManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,6 +32,8 @@ public class PacManPanel extends JPanel implements ActionListener {
 
     private int pacman_x, pacman_y, pacmand_x, pacmand_y;
     private int req_dx, req_dy;
+
+    ScoresManager scoresManager = new ScoresManager();
 
     private final short levelData[] = {
             19, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 22,
@@ -68,7 +69,6 @@ public class PacManPanel extends JPanel implements ActionListener {
         initGame();
     }
 
-
     public void loadImages() {
         down = new ImageIcon("down.gif").getImage();
         up = new ImageIcon("up.gif").getImage();
@@ -78,6 +78,7 @@ public class PacManPanel extends JPanel implements ActionListener {
         heart = new ImageIcon("heart.png").getImage();
 
     }
+
     private void initVariables() {
 
         screenData = new short[N_BLOCKS * N_BLOCKS];
@@ -164,7 +165,7 @@ public class PacManPanel extends JPanel implements ActionListener {
         if (lives == 0) {
             inGame = false;
         }
-
+        scoresManager.addNewScoreForSpecificGame("Pacman game", new score.Score(score + " dots", "Pacman ate "));
         continueLevel();
     }
 
@@ -352,7 +353,6 @@ public class PacManPanel extends JPanel implements ActionListener {
         for (i = 0; i < N_BLOCKS * N_BLOCKS; i++) {
             screenData[i] = levelData[i];
         }
-
         continueLevel();
     }
 
@@ -429,13 +429,14 @@ public class PacManPanel extends JPanel implements ActionListener {
                 } else if (key == KeyEvent.VK_DOWN) {
                     req_dx = 0;
                     req_dy = 1;
-                } else if (key == KeyEvent.VK_ESCAPE && timer.isRunning()) {
-                    inGame = false;
                 }
             } else {
                 if (key == KeyEvent.VK_SPACE) {
                     inGame = true;
                     initGame();
+                }else if (key == KeyEvent.VK_ESCAPE){
+                    inGame =false;
+                    PacmanGameSettingFrame pacmanGameSettingFrame = new PacmanGameSettingFrame();
                 }
             }
         }

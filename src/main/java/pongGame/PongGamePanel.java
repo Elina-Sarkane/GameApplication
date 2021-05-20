@@ -117,16 +117,16 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player2++;
             newPaddles();
             newBall();
-            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("1", "player2"));
-            System.out.println("Player 2 scored: " + pongGameScore.player2);
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player2"));
+            //System.out.println("Player 2 scored: " + pongGameScore.player2);
         }
 
         if(ball.x >= GAME_WIDTH-BALL_DIAMETER){
             pongGameScore.player1++;
             newPaddles();
             newBall();
-            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("1", "player1"));
-            System.out.println("Player 1 scored: " + pongGameScore.player1);
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player1"));
+            //System.out.println("Player 1 scored: " + pongGameScore.player1);
         }
     }
     public void run(){
@@ -148,11 +148,12 @@ public class PongGamePanel extends JPanel implements Runnable {
 
     }
     public class ActionListener extends KeyAdapter {
-        public void keyPressed(KeyEvent e){
+        public void keyPressed(KeyEvent e) {
             pongPaddle1.keyPressed(e);
             pongPaddle2.keyPressed(e);
         }
-        public void keyReleased(KeyEvent e){
+
+        public void keyReleased(KeyEvent e) {
             pongPaddle1.keyReleased(e);
             pongPaddle2.keyReleased(e);
         }

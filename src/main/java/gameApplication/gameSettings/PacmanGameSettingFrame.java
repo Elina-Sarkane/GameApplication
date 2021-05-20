@@ -58,7 +58,7 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
         backButton.setBorder(BorderFactory.createBevelBorder(0));
 
         exitButton = new JButton();
-        exitButton.setBounds(100, 360, 250, 50);
+        exitButton.setBounds(100, 350, 250, 50);
         exitButton.addActionListener(this);
         exitButton.setText("EXIT");
         exitButton.setFocusable(false);
@@ -90,12 +90,19 @@ public class PacmanGameSettingFrame extends JFrame implements ActionListener {
             PacManPanel pacManPanel = new PacManPanel();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            ScoresManager iNeedMyScoreManager = new ScoresManager();
-            iNeedMyScoreManager.getAllScores("Pacman game").forEach(PacmanScore::showScore);
+            PacmanScore pacmanScore = new PacmanScore();
             PacmanGameSettingFrame pacmanGameSettingFrame = new PacmanGameSettingFrame();
         }else if (e.getSource() == resetScore){
             ScoresManager gameScoreManager = new ScoresManager();
             gameScoreManager.removeScoresFile("Pacman game");
+            ImageIcon delete = new ImageIcon("delete.png");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Scores deleted successfully!",
+                    "Pac-Man scores deleted!",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    delete
+            );
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             PacmanGameFrame pacmanGameFrame = new PacmanGameFrame();

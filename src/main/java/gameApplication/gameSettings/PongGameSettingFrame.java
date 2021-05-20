@@ -1,8 +1,6 @@
 package gameApplication.gameSettings;
 
 import gameApplication.frames.PongGameFrame;
-import pongGame.PongGameScore;
-import score.PacmanScore;
 import score.PongScore;
 import score.ScoresManager;
 
@@ -91,12 +89,19 @@ public class PongGameSettingFrame extends JFrame implements ActionListener {
             pongGame.PongGameFrame pongGameFrame = new pongGame.PongGameFrame();
         }else if(e.getSource() == scoresButton) {
             gameSettingFrame.dispose();
-            ScoresManager iNeedMyScoreManager = new ScoresManager();
-            iNeedMyScoreManager.getAllScores("Pong game").forEach(PacmanScore::showScore);
+            PongScore pongScore = new PongScore();
             PongGameSettingFrame pongGameSettingFrame = new PongGameSettingFrame();
         }else if (e.getSource() == resetScore){
             ScoresManager gameScoreManager = new ScoresManager();
             gameScoreManager.removeScoresFile("Pong game");
+            ImageIcon delete = new ImageIcon("delete.png");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Scores deleted successfully!",
+                    "Pong scores deleted!",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    delete
+            );
         }else if (e.getSource() == backButton){
             gameSettingFrame.dispose();
             PongGameFrame pongGameFrame = new PongGameFrame();

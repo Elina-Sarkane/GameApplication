@@ -1,18 +1,30 @@
 package score;
 
-public class SnakeScore {
+import javax.swing.*;
 
-    ScoresManager scoresManager = new ScoresManager();
+public class SnakeScore{
 
-    public static void showScore(Score score) {
-        System.out.println(score.playerName + "  " + score.playerScore);
-    }
+    ImageIcon icon = new ImageIcon("trophy.png");
+    JLabel snakeScores = new JLabel("", icon, 0);
 
-    /*ScoresManager scoresManager = new ScoresManager();
+    public SnakeScore() {
 
-    public void snake() {
-        for (score.Score score : scoresManager.getAllScores("Snake")) {
-            System.out.println(score.playerName + "  " + score.playerScore);
+        String scoreValues = "";
+
+        ScoresManager iNeedMyScoreManager = new ScoresManager();
+        for (Score score : iNeedMyScoreManager.getAllScores("Snake game")) {
+            scoreValues += score.playerName + " " + score.playerScore + "\n";
         }
-    }*/
+
+        snakeScores.setText(scoreValues);
+
+        ImageIcon trophy = new ImageIcon("trophy.png");
+        JOptionPane.showMessageDialog(
+                null,
+                "\n" + scoreValues,
+                "Snake Game Scores!",
+                JOptionPane.INFORMATION_MESSAGE,
+                trophy
+        );
+    }
 }

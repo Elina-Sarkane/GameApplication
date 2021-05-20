@@ -85,4 +85,5 @@ public class ScoresManager {
       loggingManager.showDebugMessage(gameName + " scores may not exist or not enough permission");
     }
   }
+
 }

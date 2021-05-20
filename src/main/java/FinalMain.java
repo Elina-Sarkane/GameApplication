@@ -1,6 +1,5 @@
 import gameApplication.frames.GameMenuFrame;
 import score.ScoresManager;
-import score.TictactoeScore;
 
 import java.util.ArrayList;
 

@@ -117,7 +117,7 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player2++;
             newPaddles();
             newBall();
-            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player2"));
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player 2 "));
             //System.out.println("Player 2 scored: " + pongGameScore.player2);
         }
 
@@ -125,7 +125,7 @@ public class PongGamePanel extends JPanel implements Runnable {
             pongGameScore.player1++;
             newPaddles();
             newBall();
-            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player1"));
+            scoresManager.addNewScoreForSpecificGame("Pong game", new score.Score("scored " + pongGameScore.player1, "Player 1 "));
             //System.out.println("Player 1 scored: " + pongGameScore.player1);
         }
     }

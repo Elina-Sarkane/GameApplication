@@ -79,7 +79,6 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         }
         else {
             gameOver(g);
-            saveFinalScore();
         }
     }
     public void newApple() {
@@ -159,7 +158,6 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         SnakeGameSettingFrame snakeGameSettingFrame = new SnakeGameSettingFrame();
 
     }
-    public void saveFinalScore() {}
 
     @Override
     public void actionPerformed(ActionEvent e) {

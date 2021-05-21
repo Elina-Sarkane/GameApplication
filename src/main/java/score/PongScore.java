@@ -14,7 +14,7 @@ public class PongScore{
 
         ScoresManager iNeedMyScoreManager = new ScoresManager();
         for (Score score : iNeedMyScoreManager.getAllScores("Pong game")) {
-            scoreValues += score.playerName + " " + score.playerScore + "\n";
+            scoreValues += score.playerName + "  " + score.playerScore + "\n";
         }
         pongScores.setText(scoreValues);
 
